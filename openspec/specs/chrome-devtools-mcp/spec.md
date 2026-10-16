@@ -1,4 +1,9 @@
-## ADDED Requirements
+# chrome-devtools-mcp Specification
+
+## Purpose
+Tích hợp máy chủ Google Chrome DevTools MCP để thực thi tương tác giao diện trực quan (Headed mode), bảo mật đăng nhập qua Chat Gate và trích xuất lỗi chuyên sâu từ F12 Console & Network API.
+
+## Requirements
 
 ### Requirement: Cấu hình và Kết nối Google Chrome DevTools MCP
 Hệ thống MUST tích hợp máy chủ `chrome-devtools-mcp` thông qua `npx -y chrome-devtools-mcp@latest` trên môi trường Node.js (v18+) và trình duyệt Google Chrome có giao diện trực quan (Headed mode), hoàn toàn không sử dụng API Key trả phí bên ngoài.
@@ -28,4 +33,3 @@ AI Agent SHALL thực thi kiểm thử theo từng nhóm nhỏ (Batching từ 2 
 #### Scenario: Phát hiện lỗi và thu thập Root Cause từ Console F12 & Network API (FAIL)
 - **WHEN** một bước thao tác thất bại hoặc giao diện hiển thị không đúng với Expected Result
 - **THEN** Agent MUST gọi `list_console_messages` để thu thập lỗi Javascript đỏ trên tab Console F12, gọi `list_network_requests` để thu thập các request API bị lỗi HTTP 4xx/5xx, gọi `take_screenshot` để lưu ảnh bằng chứng vào `reports/screenshots/{case_id}.png` và chuyển toàn bộ thông tin Root Cause sang bộ xuất báo cáo Excel
-
