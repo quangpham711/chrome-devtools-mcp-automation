@@ -184,3 +184,64 @@ def test_excel_reporter_preserves_user_feedback_on_incremental_update(tmp_path: 
     assert wb["Summary"]["C11"].value == "PASSED"
     wb.close()
 
+
+def test_cli_tools_end_to_end(tmp_path: Path) -> None:
+    import subprocess
+    import sys
+
+    project_root = Path(__file__).resolve().parent.parent
+    report_path = tmp_path / "reports" / "cli_report.xlsx"
+    screenshots_dir = tmp_path / "reports" / "screenshots"
+    sample_yaml = project_root / "test_cases" / "sample.yaml"
+
+    # 1. Capture/normalize screenshot via tools/take_screenshot.py
+    shot_cmd = [
+        sys.executable,
+        str(project_root / "tools" / "take_screenshot.py"),
+        "--case-id",
+        "TC_03",
+        "--output-dir",
+        str(screenshots_dir),
+        "--status",
+        "FAIL",
+        "--title",
+        "HTTP 500 Status Code Detected",
+    ]
+    shot_proc = subprocess.run(shot_cmd, capture_output=True, text=True, check=True)
+    shot_output = shot_proc.stdout.strip()
+    assert (screenshots_dir / "TC_03.png").exists()
+
+    # 2. Log FAIL test case via tools/log_to_excel.py
+    log_cmd = [
+        sys.executable,
+        str(project_root / "tools" / "log_to_excel.py"),
+        "--report",
+        str(report_path),
+        "--yaml",
+        str(sample_yaml),
+        "--case-id",
+        "TC_03",
+        "--status",
+        "FAIL",
+        "--actual",
+        "Trang trả về mã lỗi HTTP 500",
+        "--screenshot",
+        str(screenshots_dir / "TC_03.png"),
+        "--console-error",
+        "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "--network-error",
+        "GET https://the-internet.herokuapp.com/status_codes/500 -> HTTP 500",
+    ]
+    subprocess.run(log_cmd, capture_output=True, text=True, check=True)
+    assert report_path.exists()
+
+    wb = load_workbook(report_path, data_only=False)
+    assert wb["TestResults"]["A2"].value == "TC_03"
+    assert wb["TestResults"]["I2"].value == "FAIL"
+    assert wb["NoteBug"]["A2"].value == "TC_03"
+    assert "HTTP 500" in wb["NoteBug"]["G2"].value
+    assert len(wb["NoteBug"]._images) == 1
+    assert shot_output.endswith("TC_03.png")
+    wb.close()
+
+
