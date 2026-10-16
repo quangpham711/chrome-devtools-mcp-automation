@@ -1,0 +1,34 @@
+suite_name: "Bộ kịch bản kiểm thử mẫu (Sample Web Test Suite)"
+target_url: "https://the-internet.herokuapp.com"
+requires_chat_gate_login: false
+
+test_cases:
+  - id: "TC_01"
+    module: "Authentication"
+    feature: "Hiển thị trang Đăng nhập"
+    description: "Kiểm tra giao diện trang Form Authentication tải thành công và không có lỗi Console F12"
+    steps:
+      - "Điều hướng tới trang /login bằng navigate_page"
+      - "Quan sát biểu mẫu đăng nhập gồm ô Username, Password và nút Login"
+      - "Kiểm tra tab Console F12 và Network API"
+    expected_result: "Trang đăng nhập hiển thị đầy đủ các trường nhập liệu, không có lỗi Javascript đỏ hoặc lỗi HTTP 4xx/5xx"
+
+  - id: "TC_02"
+    module: "UI Elements"
+    feature: "Thao tác Checkbox"
+    description: "Kiểm tra khả năng chọn và bỏ chọn các ô Checkbox trên giao diện"
+    steps:
+      - "Điều hướng tới trang /checkboxes"
+      - "Click chọn vào Checkbox 1 bằng công cụ click của Chrome DevTools MCP"
+      - "Kiểm tra trạng thái đã chọn của Checkbox 1"
+    expected_result: "Checkbox 1 chuyển sang trạng thái được tích chọn (checked), không phát sinh lỗi Console"
+
+  - id: "TC_03"
+    module: "Navigation"
+    feature: "Kiểm tra Status Codes & Bắt lỗi Network F12"
+    description: "Kiểm tra khả năng phát hiện lỗi HTTP 500 trên tab Network thông qua list_network_requests"
+    steps:
+      - "Điều hướng tới trang /status_codes"
+      - "Click vào liên kết mã trạng thái 500"
+      - "Gọi list_network_requests để kiểm tra mã phản hồi HTTP"
+    expected_result: "Hệ thống ghi nhận chính xác trạng thái phản hồi từ server và chụp ảnh bằng chứng"

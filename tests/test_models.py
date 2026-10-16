@@ -149,3 +149,4 @@ def test_testresult_invalid_status_raises() -> None:
     )
     with pytest.raises(ValueError, match="Invalid status"):
         TestResult(test_case=tc, status="BLOCKED", actual_result="Không bấm được")
+

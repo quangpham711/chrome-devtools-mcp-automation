@@ -1,0 +1,44 @@
+suite_name: "Kịch bản Kiểm thử Hệ thống Web Doanh nghiệp (Company Portal QA Suite)"
+target_url: "https://portal.company.example.com/login"
+requires_chat_gate_login: true
+
+test_cases:
+  - id: "COMP_TC_01"
+    module: "Authentication"
+    feature: "Đăng nhập qua Chat Gate bảo mật"
+    description: "Kiểm tra quy trình đăng nhập thủ công qua Chat Gate và chuyển hướng vào trang tổng quan"
+    steps:
+      - "Agent mở URL trang đăng nhập bằng navigate_page trên cửa sổ Google Chrome (Headed mode)"
+      - "Agent tạm dừng tại Chat Gate, thông báo người dùng tự nhập tài khoản mật khẩu và nhắn 'xong'"
+      - "Sau khi người dùng nhắn 'xong', kiểm tra giao diện Dashboard chính đã tải hoàn tất"
+    expected_result: "Đăng nhập thành công vào trang Dashboard, không lưu mật khẩu, không có lỗi Console F12 hay API 500"
+
+  - id: "COMP_TC_02"
+    module: "Dashboard"
+    feature: "Thống kê số liệu tổng quan"
+    description: "Kiểm tra các thẻ chỉ số KPI và biểu đồ trên trang chủ tải đúng dữ liệu từ API"
+    steps:
+      - "Quan sát khu vực thẻ thống kê KPI tại màn hình chính"
+      - "Kiểm tra các request lấy dữ liệu thống kê qua list_network_requests"
+      - "Kiểm tra lỗi Javascript qua list_console_messages"
+    expected_result: "Tất cả API thống kê trả về HTTP 200, số liệu hiển thị rõ ràng và không bị treo loading"
+
+  - id: "COMP_TC_03"
+    module: "Customer Management"
+    feature: "Tìm kiếm và lọc danh sách khách hàng"
+    description: "Kiểm tra chức năng tìm kiếm từ khóa và bộ lọc trạng thái khách hàng"
+    steps:
+      - "Điều hướng vào menu Quản lý Khách hàng"
+      - "Dùng công cụ fill nhập từ khóa tìm kiếm vào ô Search và nhấn Enter"
+      - "Chờ kết quả hiển thị bằng wait_for và kiểm tra danh sách trả về"
+    expected_result: "Bảng dữ liệu hiển thị đúng danh sách khách hàng khớp từ khóa tìm kiếm, tốc độ phản hồi nhanh"
+
+  - id: "COMP_TC_04"
+    module: "Ticket / Order"
+    feature: "Tạo mới phiếu yêu cầu / đơn hàng"
+    description: "Kiểm tra luồng mở popup tạo mới, điền thông tin bắt buộc và bấm nút Lưu"
+    steps:
+      - "Click vào nút Tạo mới trên góc phải màn hình"
+      - "Điền thông tin vào các trường bắt buộc bằng công cụ fill / fill_form"
+      - "Click nút Lưu và kiểm tra kết quả trả về từ API backend"
+    expected_result: "Tạo mới thành công, hiển thị thông báo thành công và bản ghi mới xuất hiện đầu danh sách"
