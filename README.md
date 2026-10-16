@@ -65,3 +65,4 @@ pip install -r requirements.txt
 openspec validate ai-chrome-mcp-web-test
 pytest tests/ -v
 ```
+

@@ -9,7 +9,7 @@
 
 ## 3. Xây dựng Mô hình Dữ liệu & Bộ nạp Kịch bản YAML
 
-- [ ] 3.1 Cài đặt `src/webtest/__init__.py` và `src/webtest/models.py` (định nghĩa `ErrorCode`, `TestCase`, `TestResult` kèm đầy đủ thuộc tính Console F12 & Network API error) và viết unit test `tests/test_models.py`, chạy pytest pass và commit/push lên GitHub
+- [x] 3.1 Cài đặt `src/webtest/__init__.py` và `src/webtest/models.py` (định nghĩa `ErrorCode`, `TestCase`, `TestResult` kèm đầy đủ thuộc tính Console F12 & Network API error) và viết unit test `tests/test_models.py`, chạy pytest pass và commit/push lên GitHub
 - [ ] 3.2 Cài đặt `src/webtest/test_loader.py` (nạp và validate kịch bản kiểm thử từ file YAML) cùng bộ test case mẫu `test_cases/sample.yaml`, `test_cases/company_testcases.yaml` và unit test `tests/test_loader.py`, chạy pytest pass và commit/push lên GitHub
 
 ## 4. Xây dựng Python Excel Reporter Engine (3 Sheets) & CLI Tools
