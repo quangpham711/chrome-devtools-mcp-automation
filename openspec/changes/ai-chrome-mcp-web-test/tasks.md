@@ -5,7 +5,7 @@
 
 ## 2. Thiết lập Cấu hình Môi trường & Cấu trúc Dự án Chuẩn
 
-- [ ] 2.1 Tạo file `package.json` (cấu hình `chrome-devtools-mcp`), `requirements.txt` (`openpyxl`, `pyyaml`, `pytest`, `pillow`), `README.md` và khởi tạo khung thư mục dự án (`src/webtest/`, `tools/`, `test_cases/`, `reports/screenshots/`, `tests/`), sau đó commit/push lên GitHub
+- [x] 2.1 Tạo file `package.json` (cấu hình `chrome-devtools-mcp`), `requirements.txt` (`openpyxl`, `pyyaml`, `pytest`, `pillow`), `README.md` và khởi tạo khung thư mục dự án (`src/webtest/`, `tools/`, `test_cases/`, `reports/screenshots/`, `tests/`), sau đó commit/push lên GitHub
 
 ## 3. Xây dựng Mô hình Dữ liệu & Bộ nạp Kịch bản YAML
 
@@ -16,3 +16,4 @@
 
 - [ ] 4.1 Cài đặt `src/webtest/reporter.py` (`ExcelReporter` xuất 3 Sheets: `Summary` KPI Dashboard, `TestResults` 11 cột kèm hyperlink tương đối & bảo toàn cột Phản hồi/FEEDBACK, `NoteBug` 10 cột kèm Root Cause F12 & nhúng ảnh thumbnail `200x112px` ở dòng cao `125pt`), viết unit test `tests/test_reporter.py`, chạy pytest pass và commit/push lên GitHub
 - [ ] 4.2 Cài đặt CLI script `tools/log_to_excel.py` và `tools/take_screenshot.py` để AI Agent gọi trực tiếp trong quá trình thực thi kiểm thử, kiểm tra hoạt động end-to-end tạo file báo cáo mẫu trong `reports/`, sau đó commit/push lên GitHub
+

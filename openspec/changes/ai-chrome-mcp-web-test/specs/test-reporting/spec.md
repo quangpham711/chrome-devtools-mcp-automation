@@ -31,3 +31,4 @@ Bộ xuất báo cáo `ExcelReporter` MUST tạo Sheet thứ ba có tên `NoteBu
 #### Scenario: Ghi nhận test case FAIL và nhúng ảnh trực tiếp vào Sheet NoteBug
 - **WHEN** một `TestResult` có trạng thái `FAIL` được ghi vào báo cáo Excel
 - **THEN** hệ thống MUST thêm dòng tương ứng vào Sheet `NoteBug` với đủ 10 cột (`Bug ID / Test Case ID`, `Module`, `Chức năng`, `Các bước tái hiện`, `Expected Result`, `Actual Result`, `Chi tiết lỗi (Root Cause)`, `Bằng chứng ảnh (Screenshot)`, `Trạng thái xử lý` mặc định là `Chờ xác nhận`, `Dev Note / Phản hồi`), ghi đầy đủ lỗi Console F12 và Network API vào cột 7, nhúng trực tiếp ảnh thumbnail kích thước `200px x 112px` vào ô cột 8 (cột H) bằng `openpyxl.drawing.image.Image` và tự động đặt chiều cao dòng đó lên `125pt`
+

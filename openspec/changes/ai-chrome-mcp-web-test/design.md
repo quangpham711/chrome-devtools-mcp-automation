@@ -34,3 +34,4 @@ Hệ thống Kiểm thử Web Tự động bằng AI được xây dựng theo k
 - **[Rủi ro] Tràn bộ nhớ ngữ cảnh khi chạy nhiều test case liên tiếp** $\rightarrow$ *Giảm thiểu*: Áp dụng quy tắc Batching (tối đa 2–3 test cases mỗi lượt), ghi kết quả ngay vào Excel qua `tools/log_to_excel.py` và khuyến nghị người dùng sử dụng `/compact` khi phiên làm việc kéo dài.
 - **[Rủi ro] File ảnh chụp màn hình quá lớn làm nặng file Excel khi nhúng vào `NoteBug`** $\rightarrow$ *Giảm thiểu*: Sử dụng thư viện `Pillow` và `openpyxl.drawing.image.Image` để cố định kích thước hiển thị thumbnail ở mức `200px x 112px` và chiều cao dòng `125pt`.
 - **[Rủi ro] Ghi đè làm mất phản hồi của QA/Dev trong file Excel đã tồn tại** $\rightarrow$ *Giảm thiểu*: Trong `ExcelReporter`, khi cập nhật test case đã có sẵn trong `TestResults`, bắt buộc đọc và bảo toàn giá trị hiện có của cột 10 (`Phản hồi`) và cột 11 (`FEEDBACK`).
+

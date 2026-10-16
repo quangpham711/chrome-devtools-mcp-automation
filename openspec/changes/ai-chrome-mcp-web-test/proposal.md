@@ -28,3 +28,4 @@ Bên cạnh đó, hệ thống bắt buộc phải đảm bảo an toàn bảo m
 - **Cấu hình môi trường**: Thêm `package.json` và cấu hình MCP (`chrome-devtools-mcp@latest` trên Node.js v18+), thêm `requirements.txt` (`openpyxl`, `pyyaml`, `pillow`, `pytest`).
 - **Mã nguồn dự án**: Tạo mới các module trong `src/webtest/`, `tools/`, `test_cases/`, `tests/` và thư mục đầu ra `reports/screenshots/`.
 - **Quy trình vận hành & Quản lý mã nguồn**: Áp dụng quy trình SOP 5 bước kết hợp nguyên tắc **Commit & Push lên GitHub ngay sau mỗi bước hoàn thành**.
+

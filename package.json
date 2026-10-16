@@ -1,0 +1,25 @@
+{
+  "name": "chrome-devtools-mcp-automation",
+  "version": "1.0.0",
+  "description": "AI Web Testing Hybrid Architecture (Google Chrome DevTools MCP + Spec-Driven Python Excel Reporter)",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "mcp:chrome": "npx -y chrome-devtools-mcp@latest",
+    "test:unit": "pytest tests/ -v",
+    "openspec:validate": "openspec validate ai-chrome-mcp-web-test"
+  },
+  "dependencies": {
+    "chrome-devtools-mcp": "latest"
+  },
+  "keywords": [
+    "ai-testing",
+    "chrome-devtools-mcp",
+    "qa-automation",
+    "openspec",
+    "excel-reporter"
+  ],
+  "license": "MIT"
+}
