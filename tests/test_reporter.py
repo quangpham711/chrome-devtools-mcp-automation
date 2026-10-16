@@ -183,3 +183,4 @@ def test_excel_reporter_preserves_user_feedback_on_incremental_update(tmp_path: 
     assert ws_tr["K2"].value == "Ưu tiên cao"
     assert wb["Summary"]["C11"].value == "PASSED"
     wb.close()
+

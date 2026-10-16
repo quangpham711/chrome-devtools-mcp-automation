@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from collections import OrderedDict
 from datetime import datetime
+from io import BytesIO
 from pathlib import Path
 from typing import Iterable
 
@@ -21,6 +22,7 @@ from openpyxl.drawing.image import Image as OpenpyxlImage
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.worksheet import Worksheet
+from PIL import Image as PILImage
 
 from .models import ErrorCode, TestCase, TestResult, TestStatus
 
@@ -537,7 +539,15 @@ class ExcelReporter:
             # Embed 200x112px thumbnail image into cell H{idx} if screenshot file exists on disk
             img_file = self._resolve_screenshot_file(res.screenshot_path)
             if img_file is not None:
-                excel_img = OpenpyxlImage(str(img_file))
+                with PILImage.open(img_file) as pil_img:
+                    resized = pil_img.convert("RGB").resize(
+                        (THUMBNAIL_WIDTH_PX, THUMBNAIL_HEIGHT_PX),
+                        PILImage.Resampling.LANCZOS,
+                    )
+                    img_buffer = BytesIO()
+                    resized.save(img_buffer, format="PNG")
+                    img_buffer.seek(0)
+                excel_img = OpenpyxlImage(img_buffer)
                 excel_img.width = THUMBNAIL_WIDTH_PX
                 excel_img.height = THUMBNAIL_HEIGHT_PX
                 ws.add_image(excel_img, f"H{idx}")
@@ -561,3 +571,4 @@ class ExcelReporter:
         }
         for col_idx, width in col_widths.items():
             ws.column_dimensions[get_column_letter(col_idx)].width = width
+
