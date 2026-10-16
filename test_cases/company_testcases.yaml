@@ -1,5 +1,5 @@
-suite_name: "Kịch bản Kiểm thử Hệ thống Web Doanh nghiệp (Company Portal QA Suite)"
-target_url: "https://portal.company.example.com/login"
+suite_name: "Kiểm thử Hệ thống MiDesk CRM (Pizza 4P's UAT)"
+target_url: "https://pizza4ps-uat.midesk.vn/vi"
 requires_chat_gate_login: true
 
 test_cases:
@@ -42,4 +42,35 @@ test_cases:
       - "Điền thông tin vào các trường bắt buộc bằng công cụ fill / fill_form"
       - "Click nút Lưu và kiểm tra kết quả trả về từ API backend"
     expected_result: "Tạo mới thành công, hiển thị thông báo thành công và bản ghi mới xuất hiện đầu danh sách"
+
+  - id: "COMP_TC_05"
+    module: "Ticket Validation"
+    feature: "Kiểm tra ràng buộc trường bắt buộc khi Tạo Phiếu"
+    description: "Kiểm tra hành vi chặn submit khi bấm Lưu: New mà bỏ trống Người yêu cầu, Tiêu đề, Nội dung"
+    steps:
+      - "Tại màn hình Tạo mới Phiếu (ticket/indexTicket), giữ trống các trường bắt buộc (*)"
+      - "Click vào nút Lưu: New bằng công cụ click của Chrome DevTools MCP"
+      - "Kiểm tra trạng thái focus trên giao diện và kiểm tra F12 Console / Network"
+    expected_result: "Hệ thống chặn gửi form rỗng, tự động focus vào trường bắt buộc Người yêu cầu (*), không phát sinh lỗi Console hay HTTP 500"
+
+  - id: "COMP_TC_06"
+    module: "Order Management"
+    feature: "Điều hướng và tải danh sách Đơn hàng"
+    description: "Kiểm tra chức năng mở phân hệ Đơn hàng (order/indexOrder) trên thanh menu trái"
+    steps:
+      - "Click vào biểu tượng Đơn hàng trên thanh điều hướng bên trái"
+      - "Chờ Iframe order/indexOrder và bảng order_main_list tải dữ liệu"
+      - "Kiểm tra các request API qua list_network_requests và lỗi Console qua list_console_messages"
+    expected_result: "Trang Đơn hàng tải thành công, các API order_main_list và get_order_main_list trả về HTTP 200, không có lỗi Console"
+
+  - id: "COMP_TC_07"
+    module: "Event Management"
+    feature: "Điều hướng phân hệ Sự kiện & Kiểm tra lỗi F12 Console"
+    description: "Kiểm tra phân hệ Sự kiện (event/indexEvent) và rà soát lỗi Javascript Console F12 / Network API"
+    steps:
+      - "Click vào biểu tượng Sự kiện trên thanh điều hướng bên trái"
+      - "Quan sát giao diện Lịch sự kiện và bộ lọc thời gian trong Iframe event/indexEvent"
+      - "Gọi list_console_messages và list_network_requests để kiểm tra lỗi kỹ thuật F12"
+    expected_result: "Trang Sự kiện hiển thị đầy đủ lịch và bộ lọc, hoàn toàn không có lỗi Javascript đỏ (SyntaxError/TypeError) trên Console F12"
+
 

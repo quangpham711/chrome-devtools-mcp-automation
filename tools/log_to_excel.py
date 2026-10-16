@@ -181,6 +181,25 @@ def main() -> int:
         if candidate.exists():
             screenshot_path = f"reports/screenshots/{tc.id}.png"
 
+    # For FAIL test cases, automatically annotate the evidence screenshot with F12 Root Cause overlay
+    if args.status.upper() == "FAIL" and screenshot_path:
+        try:
+            from tools.take_screenshot import annotate_error_overlay
+
+            resolved_img = PROJECT_ROOT / screenshot_path if not Path(screenshot_path).is_absolute() else Path(screenshot_path)
+            if resolved_img.exists():
+                error_annotations: list[str] = []
+                for ce in (args.console_errors or []):
+                    error_annotations.append(f"Console F12: {ce}")
+                for ne in (args.network_errors or []):
+                    error_annotations.append(f"Network API: {ne}")
+                if args.ui_error:
+                    error_annotations.append(f"UI Issue: {args.ui_error}")
+                if error_annotations:
+                    annotate_error_overlay(resolved_img, error_annotations, resolved_img)
+        except Exception as exc:
+            print(f"[WARN] Failed to annotate screenshot overlay: {exc}", file=sys.stderr)
+
     result = TestResult(
         test_case=tc,
         status=args.status.upper(),
@@ -203,3 +222,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
