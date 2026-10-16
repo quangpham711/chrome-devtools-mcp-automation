@@ -14,6 +14,6 @@
 
 ## 4. Xây dựng Python Excel Reporter Engine (3 Sheets) & CLI Tools
 
-- [ ] 4.1 Cài đặt `src/webtest/reporter.py` (`ExcelReporter` xuất 3 Sheets: `Summary` KPI Dashboard, `TestResults` 11 cột kèm hyperlink tương đối & bảo toàn cột Phản hồi/FEEDBACK, `NoteBug` 10 cột kèm Root Cause F12 & nhúng ảnh thumbnail `200x112px` ở dòng cao `125pt`), viết unit test `tests/test_reporter.py`, chạy pytest pass và commit/push lên GitHub
+- [x] 4.1 Cài đặt `src/webtest/reporter.py` (`ExcelReporter` xuất 3 Sheets: `Summary` KPI Dashboard, `TestResults` 11 cột kèm hyperlink tương đối & bảo toàn cột Phản hồi/FEEDBACK, `NoteBug` 10 cột kèm Root Cause F12 & nhúng ảnh thumbnail `200x112px` ở dòng cao `125pt`), viết unit test `tests/test_reporter.py`, chạy pytest pass và commit/push lên GitHub
 - [ ] 4.2 Cài đặt CLI script `tools/log_to_excel.py` và `tools/take_screenshot.py` để AI Agent gọi trực tiếp trong quá trình thực thi kiểm thử, kiểm tra hoạt động end-to-end tạo file báo cáo mẫu trong `reports/`, sau đó commit/push lên GitHub
 

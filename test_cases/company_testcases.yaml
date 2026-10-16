@@ -42,3 +42,4 @@ test_cases:
       - "Điền thông tin vào các trường bắt buộc bằng công cụ fill / fill_form"
       - "Click nút Lưu và kiểm tra kết quả trả về từ API backend"
     expected_result: "Tạo mới thành công, hiển thị thông báo thành công và bản ghi mới xuất hiện đầu danh sách"
+

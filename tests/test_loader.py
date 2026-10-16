@@ -106,3 +106,4 @@ test_cases:
     )
     with pytest.raises(ValueError, match="Duplicate TestCase id 'TC_DUP'"):
         load_test_cases(dup_yaml)
+

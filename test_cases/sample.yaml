@@ -32,3 +32,4 @@ test_cases:
       - "Click vào liên kết mã trạng thái 500"
       - "Gọi list_network_requests để kiểm tra mã phản hồi HTTP"
     expected_result: "Hệ thống ghi nhận chính xác trạng thái phản hồi từ server và chụp ảnh bằng chứng"
+
