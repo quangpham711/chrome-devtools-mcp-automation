@@ -26,7 +26,7 @@ def test_load_sample_yaml_suite() -> None:
 def test_load_company_testcases_yaml_and_lookup() -> None:
     company_path = PROJECT_ROOT / "test_cases" / "company_testcases.yaml"
     cases = load_test_cases(company_path)
-    assert len(cases) == 4
+    assert len(cases) == 7
 
     tc = get_test_case_by_id(company_path, "COMP_TC_03")
     assert tc is not None
