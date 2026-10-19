@@ -1,0 +1,337 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1560" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+
+    <!-- Actor Header Gradients -->
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" /><stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" /><stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="mcpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" /><stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" /><stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="reporterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134e4a" /><stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowSolid" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowReturn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f87171" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#34d399" />
+    </marker>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <style>
+    .diagram-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 24px; font-weight: 800; fill: #ffffff; letter-spacing: 0.5px; }
+    .diagram-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; fill: #94a3b8; }
+    .actor-name { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .actor-role { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; fill: rgba(255,255,255,0.75); text-anchor: middle; }
+    .msg-text { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; fill: #e2e8f0; font-weight: 500; }
+    .code-text { font-family: 'Consolas', 'JetBrains Mono', monospace; font-size: 12px; fill: #38bdf8; font-weight: 600; }
+    .badge-num { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 800; fill: #ffffff; text-anchor: middle; dominant-baseline: central; }
+    .group-label { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .note-text { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; font-weight: 600; fill: #fef08a; text-anchor: middle; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="1560" fill="url(#bg)" />
+
+  <!-- Diagram Title Header -->
+  <text x="600" y="42" text-anchor="middle" class="diagram-title">SƠ ĐỒ TRÌNH TỰ KIỂM THỬ WEB TỰ ĐỘNG (END-TO-END WORKFLOW)</text>
+  <text x="600" y="66" text-anchor="middle" class="diagram-sub">Luồng tương tác chi tiết 23 bước giữa Người Dùng, AI Agent, Chrome DevTools MCP, Trình Duyệt và Bộ Xuất Excel</text>
+
+  <!-- ================= ACTOR HEADER CARDS (Y: 85 -> 145) ================= -->
+  <!-- 1. Người dùng -->
+  <g transform="translate(20, 85)" filter="url(#shadow)">
+    <rect width="160" height="54" rx="10" fill="url(#userGrad)" stroke="#3b82f6" stroke-width="1.5" />
+    <text x="80" y="24" class="actor-name">Người dùng</text>
+    <text x="80" y="42" class="actor-role">(QA / Tester Lead)</text>
+  </g>
+
+  <!-- 2. Antigravity AI Agent -->
+  <g transform="translate(270, 85)" filter="url(#shadow)">
+    <rect width="180" height="54" rx="10" fill="url(#agentGrad)" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="90" y="24" class="actor-name">Antigravity AI Agent</text>
+    <text x="90" y="42" class="actor-role">(Bộ não điều phối)</text>
+  </g>
+
+  <!-- 3. Chrome DevTools MCP -->
+  <g transform="translate(530, 85)" filter="url(#shadow)">
+    <rect width="180" height="54" rx="10" fill="url(#mcpGrad)" stroke="#f97316" stroke-width="1.5" />
+    <text x="90" y="24" class="actor-name">Chrome DevTools MCP</text>
+    <text x="90" y="42" class="actor-role">(Server npx local)</text>
+  </g>
+
+  <!-- 4. Google Chrome (Headed) -->
+  <g transform="translate(790, 85)" filter="url(#shadow)">
+    <rect width="180" height="54" rx="10" fill="url(#chromeGrad)" stroke="#10b981" stroke-width="1.5" />
+    <text x="90" y="24" class="actor-name">Google Chrome</text>
+    <text x="90" y="42" class="actor-role">(Headed Browser thật)</text>
+  </g>
+
+  <!-- 5. Python Reporter -->
+  <g transform="translate(1010, 85)" filter="url(#shadow)">
+    <rect width="170" height="54" rx="10" fill="url(#reporterGrad)" stroke="#14b8a6" stroke-width="1.5" />
+    <text x="85" y="24" class="actor-name">Python Reporter</text>
+    <text x="85" y="42" class="actor-role">(Excel 3 Sheets &amp; Pillow)</text>
+  </g>
+
+  <!-- ================= VERTICAL LIFELINES ================= -->
+  <!-- Lifelines: X = 100, 360, 620, 880, 1095 -->
+  <line x1="100" y1="145" x2="100" y2="1510" stroke="#334155" stroke-dasharray="5 5" stroke-width="1.5" />
+  <line x1="360" y1="145" x2="360" y2="1510" stroke="#334155" stroke-dasharray="5 5" stroke-width="1.5" />
+  <line x1="620" y1="145" x2="620" y2="1510" stroke="#334155" stroke-dasharray="5 5" stroke-width="1.5" />
+  <line x1="880" y1="145" x2="880" y2="1510" stroke="#334155" stroke-dasharray="5 5" stroke-width="1.5" />
+  <line x1="1095" y1="145" x2="1095" y2="1510" stroke="#334155" stroke-dasharray="5 5" stroke-width="1.5" />
+
+  <!-- ================= GIAI ĐOẠN 1: KHỞI TẠO & CHAT GATE ================= -->
+
+  <!-- STEP 1: User -> Agent (Y: 180) -->
+  <g transform="translate(0, 180)">
+    <line x1="100" y1="0" x2="352" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="100" cy="0" r="11" fill="#2563eb" stroke="#60a5fa" stroke-width="1.5" />
+    <text x="100" y="0" class="badge-num">1</text>
+    <rect x="120" y="-18" width="225" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="125" y="-4" class="msg-text">Gửi prompt: <tspan fill="#93c5fd">"Hãy chạy kiểm thử tự động..."</tspan></text>
+  </g>
+
+  <!-- STEP 2: Agent self-call: Đọc YAML (Y: 225) -->
+  <g transform="translate(0, 225)">
+    <path d="M 360 0 L 400 0 L 400 24 L 368 24" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">2</text>
+    <rect x="410" y="3" width="235" height="20" rx="4" fill="#1e1b4b" stroke="#4338ca" stroke-width="1" />
+    <text x="418" y="17" class="code-text" fill="#c7d2fe">Đọc kịch bản: company_testcases.yaml</text>
+  </g>
+
+  <!-- STEP 3: Agent -> MCP: navigate_page (Y: 275) -->
+  <g transform="translate(0, 275)">
+    <line x1="360" y1="0" x2="612" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">3</text>
+    <rect x="380" y="-18" width="215" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="385" y="-4" class="code-text">call_mcp_tool: navigate_page(URL)</text>
+  </g>
+
+  <!-- STEP 4: MCP -> Chrome: Mở cửa sổ (Y: 320) -->
+  <g transform="translate(0, 320)">
+    <line x1="620" y1="0" x2="872" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">4</text>
+    <rect x="640" y="-18" width="220" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="645" y="-4" class="msg-text">Mở cửa sổ Chrome điều hướng tới trang web</text>
+  </g>
+
+  <!-- STEP 5: Chrome -> MCP: Phát hiện login (Y: 365) -->
+  <g transform="translate(0, 365)">
+    <line x1="880" y1="0" x2="628" y2="0" stroke="#94a3b8" stroke-dasharray="5 4" stroke-width="2" marker-end="url(#arrowReturn)" />
+    <circle cx="880" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="880" y="0" class="badge-num">5</text>
+    <rect x="680" y="-18" width="180" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="685" y="-4" class="msg-text" fill="#cbd5e1">Phát hiện màn hình Đăng nhập</text>
+  </g>
+
+  <!-- STEP 6: MCP -> Agent: Báo login (Y: 410) -->
+  <g transform="translate(0, 410)">
+    <line x1="620" y1="0" x2="368" y2="0" stroke="#94a3b8" stroke-dasharray="5 4" stroke-width="2" marker-end="url(#arrowReturn)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">6</text>
+    <rect x="440" y="-18" width="130" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="445" y="-4" class="code-text" fill="#fed7aa">Trang đang ở /login</text>
+  </g>
+
+  <!-- STEP 7: Agent -> User: Chat Gate (Y: 455) -->
+  <g transform="translate(0, 455)">
+    <line x1="360" y1="0" x2="108" y2="0" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowReturn)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">7</text>
+    <rect x="110" y="-22" width="240" height="24" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="1" />
+    <text x="116" y="-6" class="msg-text" fill="#fef08a">Dừng tại Chat Gate: "Vui lòng đăng nhập &amp; nhắn 'xong'"</text>
+  </g>
+
+  <!-- NOTE BOX: Người dùng tự đăng nhập (Y: 495) -->
+  <g transform="translate(350, 495)">
+    <rect x="0" y="0" width="460" height="34" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="1.5" />
+    <text x="230" y="21" class="note-text">🔒 Người dùng tự tay nhập tài khoản/mật khẩu trên Chrome an toàn (Không lưu password)</text>
+  </g>
+
+  <!-- STEP 8: User -> Agent: xong (Y: 555) -->
+  <g transform="translate(0, 555)">
+    <line x1="100" y1="0" x2="352" y2="0" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
+    <circle cx="100" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="100" y="0" class="badge-num">8</text>
+    <rect x="180" y="-18" width="105" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="190" y="-4" class="msg-text" fill="#6ee7b7" font-weight="700">Nhắn "xong"</text>
+  </g>
+
+  <!-- ================= GIAI ĐOẠN 2: LOOP EXECUTION (Y: 595 -> 1410) ================= -->
+  <!-- LOOP CONTAINER BOX -->
+  <rect x="250" y="595" width="935" height="815" rx="12" fill="#0f172a" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="8 5" />
+  <rect x="250" y="595" width="260" height="26" rx="6" fill="#1e3a8a" />
+  <text x="262" y="613" class="group-label" fill="#60a5fa">LOOP [Từng Batch (2 - 3 Test Cases)]</text>
+
+  <!-- STEP 9: Agent -> MCP: click / fill (Y: 645) -->
+  <g transform="translate(0, 645)">
+    <line x1="360" y1="0" x2="612" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">9</text>
+    <rect x="375" y="-18" width="230" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="380" y="-4" class="code-text">call_mcp_tool: click / fill_form / wait_for</text>
+  </g>
+
+  <!-- STEP 10: MCP -> Chrome: Thao tác (Y: 690) -->
+  <g transform="translate(0, 690)">
+    <line x1="620" y1="0" x2="872" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">10</text>
+    <rect x="645" y="-18" width="210" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="650" y="-4" class="msg-text">Thao tác tự động trên giao diện Chrome</text>
+  </g>
+
+  <!-- STEP 11: Agent -> MCP: list_console_messages (Y: 735) -->
+  <g transform="translate(0, 735)">
+    <line x1="360" y1="0" x2="612" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">11</text>
+    <rect x="380" y="-18" width="225" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="385" y="-4" class="code-text">call_mcp_tool: list_console_messages</text>
+  </g>
+
+  <!-- STEP 12: MCP -> Chrome: Đọc Console (Y: 780) -->
+  <g transform="translate(0, 780)">
+    <line x1="620" y1="0" x2="872" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">12</text>
+    <rect x="690" y="-18" width="120" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="695" y="-4" class="msg-text">Đọc tab Console F12</text>
+  </g>
+
+  <!-- STEP 13: Chrome -> Agent: Trả log JS (Y: 825) -->
+  <g transform="translate(0, 825)">
+    <line x1="880" y1="0" x2="368" y2="0" stroke="#94a3b8" stroke-dasharray="5 4" stroke-width="2" marker-end="url(#arrowReturn)" />
+    <circle cx="880" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="880" y="0" class="badge-num">13</text>
+    <rect x="540" y="-18" width="160" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="545" y="-4" class="msg-text" fill="#cbd5e1">Trả về lỗi Javascript (nếu có)</text>
+  </g>
+
+  <!-- STEP 14: Agent -> MCP: list_network_requests (Y: 870) -->
+  <g transform="translate(0, 870)">
+    <line x1="360" y1="0" x2="612" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">14</text>
+    <rect x="380" y="-18" width="225" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="385" y="-4" class="code-text">call_mcp_tool: list_network_requests</text>
+  </g>
+
+  <!-- STEP 15: MCP -> Chrome: Đọc Network (Y: 915) -->
+  <g transform="translate(0, 915)">
+    <line x1="620" y1="0" x2="872" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">15</text>
+    <rect x="690" y="-18" width="125" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="695" y="-4" class="msg-text">Đọc tab Network F12</text>
+  </g>
+
+  <!-- STEP 16: Chrome -> Agent: Trả mã HTTP (Y: 960) -->
+  <g transform="translate(0, 960)">
+    <line x1="880" y1="0" x2="368" y2="0" stroke="#94a3b8" stroke-dasharray="5 4" stroke-width="2" marker-end="url(#arrowReturn)" />
+    <circle cx="880" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="880" y="0" class="badge-num">16</text>
+    <rect x="520" y="-18" width="200" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="525" y="-4" class="msg-text" fill="#cbd5e1">Trả về mã HTTP 200 hoặc lỗi 4xx/5xx</text>
+  </g>
+
+  <!-- STEP 17: Agent -> MCP: take_screenshot (Y: 1005) -->
+  <g transform="translate(0, 1005)">
+    <line x1="360" y1="0" x2="612" y2="0" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrowSolid)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">17</text>
+    <rect x="400" y="-18" width="180" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="405" y="-4" class="code-text">call_mcp_tool: take_screenshot</text>
+  </g>
+
+  <!-- STEP 18: MCP -> Agent: Lưu ảnh (Y: 1050) -->
+  <g transform="translate(0, 1050)">
+    <line x1="620" y1="0" x2="368" y2="0" stroke="#94a3b8" stroke-dasharray="5 4" stroke-width="2" marker-end="url(#arrowReturn)" />
+    <circle cx="620" cy="0" r="11" fill="#ea580c" stroke="#fb923c" stroke-width="1.5" />
+    <text x="620" y="0" class="badge-num">18</text>
+    <rect x="400" y="-18" width="185" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="405" y="-4" class="code-text" fill="#fed7aa">Lưu: reports/screenshots/{id}.png</text>
+  </g>
+
+  <!-- ================= ALT CONTAINER: FAIL HANDLING (Y: 1090 -> 1240) ================= -->
+  <rect x="270" y="1090" width="895" height="150" rx="8" fill="#450a0a" fill-opacity="0.4" stroke="#ef4444" stroke-width="1.5" />
+  <rect x="270" y="1090" width="220" height="24" rx="4" fill="#991b1b" />
+  <text x="280" y="1107" class="group-label" fill="#fecaca">ALT [Test Case Bị Lỗi (FAIL)]</text>
+
+  <!-- STEP 19: Agent -> Reporter: annotate error (Y: 1140) -->
+  <g transform="translate(0, 1140)">
+    <line x1="360" y1="0" x2="1087" y2="0" stroke="#f87171" stroke-width="2" marker-end="url(#arrowRed)" />
+    <circle cx="360" cy="0" r="11" fill="#b91c1c" stroke="#f87171" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">19</text>
+    <rect x="520" y="-18" width="370" height="20" rx="4" fill="#1e1e24" stroke="#ef4444" stroke-width="1" />
+    <text x="526" y="-4" class="code-text" fill="#fca5a5">tools/take_screenshot.py --annotate-error (F12 Root Cause)</text>
+  </g>
+
+  <!-- STEP 20: Reporter self-call: Pillow vẽ Banner đỏ (Y: 1195) -->
+  <g transform="translate(0, 1195)">
+    <path d="M 1095 0 L 1140 0 L 1140 24 L 1103 24" fill="none" stroke="#f87171" stroke-width="2" marker-end="url(#arrowRed)" />
+    <circle cx="1095" cy="0" r="11" fill="#b91c1c" stroke="#f87171" stroke-width="1.5" />
+    <text x="1095" y="0" class="badge-num">20</text>
+    <rect x="850" y="3" width="240" height="20" rx="4" fill="#450a0a" stroke="#dc2626" stroke-width="1" />
+    <text x="856" y="17" class="msg-text" fill="#fca5a5" font-weight="600">Pillow vẽ Banner đỏ cảnh báo lỗi F12 lên ảnh</text>
+  </g>
+
+  <!-- STEP 21: Agent -> Reporter: log_to_excel (Y: 1285) -->
+  <g transform="translate(0, 1285)">
+    <line x1="360" y1="0" x2="1087" y2="0" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
+    <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">21</text>
+    <rect x="560" y="-18" width="290" height="20" rx="4" fill="#0f172a" fill-opacity="0.9" />
+    <text x="565" y="-4" class="code-text" fill="#6ee7b7">tools/log_to_excel.py (Ghi kết quả vào Excel)</text>
+  </g>
+
+  <!-- STEP 22: Reporter self-call: Cập nhật 3 Sheets (Y: 1340) -->
+  <g transform="translate(0, 1340)">
+    <path d="M 1095 0 L 1140 0 L 1140 24 L 1103 24" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
+    <circle cx="1095" cy="0" r="11" fill="#0d9488" stroke="#2dd4bf" stroke-width="1.5" />
+    <text x="1095" y="0" class="badge-num">22</text>
+    <rect x="760" y="3" width="330" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="768" y="17" class="msg-text" fill="#a7f3d0" font-weight="600">Cập nhật 3 Sheets (Summary, TestResults, NoteBug có thumbnail)</text>
+  </g>
+
+  <!-- ================= GIAI ĐOẠN 3: BÀN GIAO (Y: 1465) ================= -->
+  <!-- STEP 23: Agent -> User: Hoàn tất (Y: 1465) -->
+  <g transform="translate(0, 1465)">
+    <line x1="360" y1="0" x2="108" y2="0" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
+    <circle cx="360" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">23</text>
+    <rect x="110" y="-22" width="240" height="24" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="115" y="-6" class="msg-text" fill="#a7f3d0" font-weight="700">Báo cáo hoàn tất: Tỷ lệ Pass, link mở file Excel</text>
+  </g>
+
+</svg>
