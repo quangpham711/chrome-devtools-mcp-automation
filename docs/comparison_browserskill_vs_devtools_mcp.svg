@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 550" width="100%" height="100%">
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -8,8 +8,8 @@
 
     <!-- Card Highlight Gradients -->
     <linearGradient id="mcpBorder" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10b981" />
-      <stop offset="100%" stop-color="#3b82f6" />
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#10b981" />
     </linearGradient>
 
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
@@ -18,124 +18,124 @@
   </defs>
 
   <style>
-    .title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 24px; font-weight: 800; fill: #f8fafc; }
+    .title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 23px; font-weight: 800; fill: #f8fafc; }
     .subtitle { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; fill: #94a3b8; }
     .card-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
     .card-tag { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
     .flow-box { font-family: 'Consolas', 'JetBrains Mono', monospace; font-size: 11px; fill: #cbd5e1; }
     .label { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; font-weight: 600; fill: #94a3b8; }
-    .val-text { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; fill: #f1f5f9; font-weight: 500; }
+    .val-text { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; fill: #f1f5f9; font-weight: 400; line-height: 1.4; }
     .badge { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 10px; font-weight: 700; }
   </style>
 
   <!-- Background -->
-  <rect width="960" height="540" fill="url(#bgGrad)" />
+  <rect width="960" height="550" fill="url(#bgGrad)" />
 
   <!-- Header -->
-  <text x="480" y="45" text-anchor="middle" class="title">SO SÁNH: TENCENT BROWSERSKILL vs CHROME DEVTOOLS MCP</text>
-  <text x="480" y="68" text-anchor="middle" class="subtitle">Lý do dự án lựa chọn Google Chrome DevTools MCP cho giải pháp Kiểm thử Web Tự động</text>
+  <text x="480" y="42" text-anchor="middle" class="title">SO SÁNH KỸ THUẬT: TENCENT BROWSERSKILL vs CHROME DEVTOOLS MCP</text>
+  <text x="480" y="65" text-anchor="middle" class="subtitle">Đối chiếu kiến trúc, phương thức kết nối và khả năng hỗ trợ AI Web Testing / Debugging</text>
 
   <!-- ================= LEFT CARD: Tencent BrowserSkill ================= -->
-  <g transform="translate(40, 95)" filter="url(#shadow)">
+  <g transform="translate(40, 90)" filter="url(#shadow)">
     <!-- Card Base -->
-    <rect width="425" height="370" rx="14" fill="#161f30" stroke="#2a374a" stroke-width="1.5" />
+    <rect width="425" height="385" rx="14" fill="#161f30" stroke="#2a374a" stroke-width="1.5" />
     
     <!-- Header Tag -->
-    <rect x="20" y="20" width="165" height="22" rx="4" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" />
-    <text x="102" y="35" text-anchor="middle" class="card-tag" fill="#38bdf8">Trợ Lý Cá Nhân (Assistant)</text>
+    <rect x="20" y="20" width="195" height="22" rx="4" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.3)" />
+    <text x="117" y="35" text-anchor="middle" class="card-tag" fill="#38bdf8">CLI + Extension Workflow</text>
 
     <!-- Title -->
     <text x="20" y="68" class="card-title">Tencent BrowserSkill</text>
-    <text x="20" y="86" class="subtitle">Mô hình CLI + Background Daemon + Extension</text>
+    <text x="20" y="86" class="subtitle">Trọng tâm: Agent dùng chung Profile đăng nhập có sẵn</text>
 
     <!-- Architecture Flow -->
-    <rect x="20" y="105" width="385" height="58" rx="8" fill="#0f1724" stroke="#223044" />
-    <text x="32" y="126" class="label">LUỒNG KẾT NỐI (ARCHITECTURE):</text>
-    <text x="32" y="147" class="flow-box">AI Agent ➔ Shell CLI (bsk) ➔ Daemon ➔ Chrome Ext</text>
+    <rect x="20" y="102" width="385" height="54" rx="8" fill="#0f1724" stroke="#223044" />
+    <text x="30" y="121" class="label">KIẾN TRÚC &amp; GIAO TIẾP:</text>
+    <text x="30" y="141" class="flow-box">AI Agent ➔ Shell CLI (bsk) ➔ Daemon ➔ Extension</text>
 
-    <!-- Feature 1: Cài đặt -->
-    <g transform="translate(20, 180)">
-      <circle cx="8" cy="8" r="4" fill="#f59e0b" />
-      <text x="22" y="4" class="label">Cài đặt trên máy:</text>
-      <text x="22" y="22" class="val-text">Bắt buộc cài Chrome Extension + cài bsk binary</text>
+    <!-- Spec 1: Cài đặt -->
+    <g transform="translate(20, 172)">
+      <circle cx="6" cy="7" r="3.5" fill="#38bdf8" />
+      <text x="18" y="4" class="label">Cài đặt &amp; Môi trường:</text>
+      <text x="18" y="22" class="val-text">Yêu cầu cài binary `bsk`, daemon nền và Extension trình duyệt</text>
     </g>
 
-    <!-- Feature 2: Môi trường Test -->
-    <g transform="translate(20, 226)">
-      <circle cx="8" cy="8" r="4" fill="#f59e0b" />
-      <text x="22" y="4" class="label">Môi trường &amp; Dữ liệu phiên:</text>
-      <text x="22" y="22" class="val-text">Mượn Cookie/Profile đăng nhập cá nhân có sẵn</text>
+    <!-- Spec 2: Quản lý Profile -->
+    <g transform="translate(20, 222)">
+      <circle cx="6" cy="7" r="3.5" fill="#38bdf8" />
+      <text x="18" y="4" class="label">Trạng thái phiên (Session/Profile):</text>
+      <text x="18" y="22" class="val-text">Tận dụng phiên đăng nhập có sẵn trong profile Chrome/Edge</text>
     </g>
 
-    <!-- Feature 3: Chuẩn tích hợp -->
+    <!-- Spec 3: Khả năng Debug & QA -->
     <g transform="translate(20, 272)">
-      <circle cx="8" cy="8" r="4" fill="#f59e0b" />
-      <text x="22" y="4" class="label">Chuẩn giao tiếp với AI:</text>
-      <text x="22" y="22" class="val-text">Gọi gián tiếp qua lệnh Shell Terminal (`bsk ...`)</text>
+      <circle cx="6" cy="7" r="3.5" fill="#38bdf8" />
+      <text x="18" y="4" class="label">Khả năng Debug &amp; Bằng chứng:</text>
+      <text x="18" y="22" class="val-text">Có module `bsk debug` (Console, Network, Web Vitals, JSON)</text>
     </g>
 
-    <!-- Feature 4: Mục đích tối ưu -->
-    <g transform="translate(20, 318)">
-      <circle cx="8" cy="8" r="4" fill="#f59e0b" />
-      <text x="22" y="4" class="label">Phù hợp nhất cho:</text>
-      <text x="22" y="22" class="val-text">Cá nhân cần AI duyệt web phụ trợ khi đang làm việc</text>
+    <!-- Spec 4: Chuẩn tích hợp AI -->
+    <g transform="translate(20, 322)">
+      <circle cx="6" cy="7" r="3.5" fill="#38bdf8" />
+      <text x="18" y="4" class="label">Tích hợp vào Coding Agent:</text>
+      <text x="18" y="22" class="val-text">Tích hợp qua Agent Skill để Agent tự gọi CLI bsk qua Shell</text>
     </g>
   </g>
 
-  <!-- ================= RIGHT CARD: Chrome DevTools MCP (Selected) ================= -->
-  <g transform="translate(495, 95)" filter="url(#shadow)">
-    <!-- Card Base with Glowing Border -->
-    <rect width="425" height="370" rx="14" fill="#14232c" stroke="url(#mcpBorder)" stroke-width="2" />
+  <!-- ================= RIGHT CARD: Chrome DevTools MCP ================= -->
+  <g transform="translate(495, 90)" filter="url(#shadow)">
+    <!-- Card Base with Clean Tech Border -->
+    <rect width="425" height="385" rx="14" fill="#14232c" stroke="url(#mcpBorder)" stroke-width="1.8" />
     
-    <!-- Top Recommendation Badge -->
-    <rect x="260" y="18" width="145" height="24" rx="12" fill="#059669" />
-    <text x="332" y="34" text-anchor="middle" class="badge" fill="#ffffff">★ LỰA CHỌN CỦA DỰ ÁN</text>
+    <!-- Top Selection Badge -->
+    <rect x="255" y="18" width="150" height="24" rx="12" fill="#047857" />
+    <text x="330" y="34" text-anchor="middle" class="badge" fill="#ffffff">LỰA CHỌN CỦA DỰ ÁN</text>
 
     <!-- Header Tag -->
-    <rect x="20" y="20" width="185" height="22" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.3)" />
-    <text x="112" y="35" text-anchor="middle" class="card-tag" fill="#34d399">Kiểm Thử Doanh Nghiệp (QA)</text>
+    <rect x="20" y="20" width="180" height="22" rx="4" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.3)" />
+    <text x="110" y="35" text-anchor="middle" class="card-tag" fill="#34d399">Native MCP Protocol</text>
 
     <!-- Title -->
     <text x="20" y="68" class="card-title">Google Chrome DevTools MCP</text>
-    <text x="20" y="86" class="subtitle">Chuẩn mở Model Context Protocol (Native MCP Server)</text>
+    <text x="20" y="86" class="subtitle">Trọng tâm: Cung cấp bộ công cụ DevTools/CDP chuẩn MCP</text>
 
     <!-- Architecture Flow -->
-    <rect x="20" y="105" width="385" height="58" rx="8" fill="#09181e" stroke="#164e63" />
-    <text x="32" y="126" class="label" fill="#34d399">LUỒNG KẾT NỐI (ARCHITECTURE):</text>
-    <text x="32" y="147" class="flow-box" fill="#6ee7b7">AI Agent ➔ Native MCP (JSON-RPC) ➔ Chrome (CDP)</text>
+    <rect x="20" y="102" width="385" height="54" rx="8" fill="#09181e" stroke="#164e63" />
+    <text x="30" y="121" class="label" fill="#34d399">KIẾN TRÚC &amp; GIAO TIẾP:</text>
+    <text x="30" y="141" class="flow-box" fill="#6ee7b7">AI Agent ➔ Native MCP (JSON-RPC) ➔ Chrome (CDP)</text>
 
-    <!-- Feature 1: Cài đặt -->
-    <g transform="translate(20, 180)">
-      <circle cx="8" cy="8" r="4" fill="#10b981" />
-      <text x="22" y="4" class="label" fill="#6ee7b7">Cài đặt trên máy:</text>
-      <text x="22" y="22" class="val-text"><tspan font-weight="700" fill="#34d399">Zero Extension</tspan> — Chạy thẳng qua npx, không cài extension</text>
+    <!-- Spec 1: Cài đặt -->
+    <g transform="translate(20, 172)">
+      <circle cx="6" cy="7" r="3.5" fill="#10b981" />
+      <text x="18" y="4" class="label" fill="#6ee7b7">Cài đặt &amp; Môi trường:</text>
+      <text x="18" y="22" class="val-text">Chạy trực tiếp qua `npx`, không cần cài thêm Extension trình duyệt</text>
     </g>
 
-    <!-- Feature 2: Môi trường Test -->
-    <g transform="translate(20, 226)">
-      <circle cx="8" cy="8" r="4" fill="#10b981" />
-      <text x="22" y="4" class="label" fill="#6ee7b7">Môi trường &amp; Dữ liệu phiên:</text>
-      <text x="22" y="22" class="val-text"><tspan font-weight="700" fill="#34d399">Cô lập 100% (Clean Session)</tspan> + Bảo mật Chat Gate</text>
+    <!-- Spec 2: Quản lý Profile -->
+    <g transform="translate(20, 222)">
+      <circle cx="6" cy="7" r="3.5" fill="#10b981" />
+      <text x="18" y="4" class="label" fill="#6ee7b7">Trạng thái phiên (Session/Profile):</text>
+      <text x="18" y="22" class="val-text">Điều khiển qua cờ CDP; kết hợp quy trình đăng nhập riêng của dự án</text>
     </g>
 
-    <!-- Feature 3: Chuẩn tích hợp -->
+    <!-- Spec 3: Khả năng Debug & QA -->
     <g transform="translate(20, 272)">
-      <circle cx="8" cy="8" r="4" fill="#10b981" />
-      <text x="22" y="4" class="label" fill="#6ee7b7">Chuẩn giao tiếp với AI:</text>
-      <text x="22" y="22" class="val-text"><tspan font-weight="700" fill="#34d399">Native MCP Server</tspan> — AI gọi Tool trực tiếp qua giao thức</text>
+      <circle cx="6" cy="7" r="3.5" fill="#10b981" />
+      <text x="18" y="4" class="label" fill="#6ee7b7">Khả năng Debug &amp; Bằng chứng:</text>
+      <text x="18" y="22" class="val-text">Gọi trực tiếp API CDP (DOM, Console messages, Network, Snapshot)</text>
     </g>
 
-    <!-- Feature 4: Mục đích tối ưu -->
-    <g transform="translate(20, 318)">
-      <circle cx="8" cy="8" r="4" fill="#10b981" />
-      <text x="22" y="4" class="label" fill="#6ee7b7">Phù hợp nhất cho:</text>
-      <text x="22" y="22" class="val-text"><tspan font-weight="700" fill="#34d399">Kiểm thử tự động QA</tspan>, bắt lỗi F12, xuất báo cáo chuẩn</text>
+    <!-- Spec 4: Chuẩn tích hợp AI -->
+    <g transform="translate(20, 322)">
+      <circle cx="6" cy="7" r="3.5" fill="#10b981" />
+      <text x="18" y="4" class="label" fill="#6ee7b7">Tích hợp vào Coding Agent:</text>
+      <text x="18" y="22" class="val-text">Chuẩn Model Context Protocol (MCP) native, gọi Tool trực tiếp</text>
     </g>
   </g>
 
   <!-- Bottom Footer Note -->
-  <rect x="40" y="482" width="880" height="38" rx="6" fill="#131c2e" />
-  <text x="480" y="506" text-anchor="middle" class="subtitle" fill="#93c5fd">
-    💡 <tspan font-weight="700" fill="#ffffff">Kết luận:</tspan> BrowserSkill tối ưu cho tác vụ cá nhân, còn Chrome DevTools MCP tối ưu cho tự động hóa kiểm thử chuẩn doanh nghiệp.
+  <rect x="40" y="490" width="880" height="42" rx="6" fill="#131c2e" />
+  <text x="480" y="515" text-anchor="middle" class="subtitle" fill="#93c5fd">
+    📌 <tspan font-weight="700" fill="#ffffff">Lý do dự án chọn Chrome DevTools MCP:</tspan> Ưu tiên chuẩn kết nối Native MCP, không phụ thuộc Extension và dễ ghép nối với Engine Báo Cáo Python của dự án.
   </text>
 </svg>
