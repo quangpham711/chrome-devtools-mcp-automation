@@ -163,28 +163,28 @@
     <text x="445" y="-4" class="code-text" fill="#fed7aa">Trang đang ở /login</text>
   </g>
 
-  <!-- STEP 7: Agent -> User: Chat Gate (Y: 455) -->
+  <!-- STEP 7: Agent -> User: Thông báo (Y: 455) -->
   <g transform="translate(0, 455)">
     <line x1="360" y1="0" x2="108" y2="0" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowReturn)" />
     <circle cx="360" cy="0" r="11" fill="#7c3aed" stroke="#c084fc" stroke-width="1.5" />
     <text x="360" y="0" class="badge-num">7</text>
     <rect x="110" y="-22" width="240" height="24" rx="4" fill="#451a03" stroke="#f59e0b" stroke-width="1" />
-    <text x="116" y="-6" class="msg-text" fill="#fef08a">Dừng tại Chat Gate: "Vui lòng đăng nhập &amp; nhắn 'xong'"</text>
+    <text x="116" y="-6" class="msg-text" fill="#fef08a">Mở trang đăng nhập (Người dùng tự nhập an toàn)</text>
   </g>
 
-  <!-- NOTE BOX: Người dùng tự đăng nhập (Y: 495) -->
-  <g transform="translate(350, 495)">
-    <rect x="0" y="0" width="460" height="34" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="1.5" />
-    <text x="230" y="21" class="note-text">🔒 Người dùng tự tay nhập tài khoản/mật khẩu trên Chrome an toàn (Không lưu password)</text>
+  <!-- NOTE BOX: Người dùng tự đăng nhập trên Chrome (Y: 495) -->
+  <g transform="translate(340, 495)">
+    <rect x="0" y="0" width="480" height="34" rx="8" fill="#1e293b" stroke="#eab308" stroke-width="1.5" />
+    <text x="240" y="21" class="note-text">🔒 Người dùng nhập mật khẩu &amp; bấm Đăng nhập trên Chrome (Không cần nhắn "xong")</text>
   </g>
 
-  <!-- STEP 8: User -> Agent: xong (Y: 555) -->
+  <!-- STEP 8: Agent -> Chrome: wait_for tự động nhận diện Dashboard (Y: 555) -->
   <g transform="translate(0, 555)">
-    <line x1="100" y1="0" x2="352" y2="0" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
-    <circle cx="100" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
-    <text x="100" y="0" class="badge-num">8</text>
-    <rect x="180" y="-18" width="105" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1" />
-    <text x="190" y="-4" class="msg-text" fill="#6ee7b7" font-weight="700">Nhắn "xong"</text>
+    <line x1="360" y1="0" x2="872" y2="0" stroke="#34d399" stroke-width="2" marker-end="url(#arrowGreen)" />
+    <circle cx="360" cy="0" r="11" fill="#059669" stroke="#34d399" stroke-width="1.5" />
+    <text x="360" y="0" class="badge-num">8</text>
+    <rect x="420" y="-18" width="370" height="20" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1" />
+    <text x="428" y="-4" class="code-text" fill="#6ee7b7">wait_for: Tự nhận diện vào Dashboard thành công ➔ Chạy tiếp luôn</text>
   </g>
 
   <!-- ================= GIAI ĐOẠN 2: LOOP EXECUTION (Y: 595 -> 1410) ================= -->
@@ -335,3 +335,4 @@
   </g>
 
 </svg>
+

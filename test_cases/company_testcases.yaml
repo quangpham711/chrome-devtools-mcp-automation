@@ -9,8 +9,8 @@ test_cases:
     description: "Kiểm tra quy trình đăng nhập thủ công qua Chat Gate và chuyển hướng vào trang tổng quan"
     steps:
       - "Agent mở URL trang đăng nhập bằng navigate_page trên cửa sổ Google Chrome (Headed mode)"
-      - "Agent tạm dừng tại Chat Gate, thông báo người dùng tự nhập tài khoản mật khẩu và nhắn 'xong'"
-      - "Sau khi người dùng nhắn 'xong', kiểm tra giao diện Dashboard chính đã tải hoàn tất"
+      - "Người dùng tự nhập tài khoản mật khẩu an toàn trên Chrome"
+      - "Agent tự động quan sát (wait_for) và kích hoạt chạy tiếp ngay khi nhận diện đăng nhập thành công vào Dashboard"
     expected_result: "Đăng nhập thành công vào trang Dashboard, không lưu mật khẩu, không có lỗi Console F12 hay API 500"
 
   - id: "COMP_TC_02"
